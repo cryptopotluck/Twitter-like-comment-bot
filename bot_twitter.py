@@ -3,7 +3,9 @@ from selenium.webdriver.common.keys import Keys
 import time
 import random
 
+# the hashtag searched
 coin = 'ethereum'
+# list of different replys the bot will chose from
 posts = [f'Theirs a lot of free trading tools on https://cryptopotluck.com/free that would help you watch {coin}', f'I use https://cryptopotluck.com/coins/ to stay up to date on {coin}',f'on the track we are headed we will be rich if we stick with {coin}', f'only down for {coin}', f'only up for {coin}', 'exciting times', 'trash', 'quality', 'You should post this on my forum I think my community would really dig your prospective. https://cryptopotluck.com/post','follow?', f'I\'m a little scared about the future of {coin}',f'pumped to see where {coin} goes from here', f'{coin}, time ;)', 'I really liked this', 'maybe you could elaborate more?', 'interesting', 'not bad', 'cool idea', 'Really awesome post', 'We share a similar prospective', 'cool tweet', 'I\'m digging it', '<3', 'bullish', 'bearish', 'FOMO', 'Fud', 'Fair', 'Not sure about this', 'moon', f'I\'m thinking the same thing about {coin}', f'{coin}, is totally bearish', f'{coin}, is totally bullish', 'ready to make some money', f'Really enjoy your prospective on {coin}, made a cool app that might help you research more. Check out https://cryptopotluck.com/coins/']
 
 class TwitterBot:
@@ -11,6 +13,7 @@ class TwitterBot:
         self.username = username
         self.password = password
         self.bot = webdriver.Chrome()
+        #self.bot = webdriver.Firefox()
 
 
     def login(self):
@@ -53,7 +56,7 @@ class TwitterBot:
                     time.sleep(60)
 
 
-
+#Twitter account login
 ed = TwitterBot('#add username', '#add password')
 ed.login()
 ed.like_tweet(coin)
